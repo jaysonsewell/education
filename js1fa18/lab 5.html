@@ -1,0 +1,90 @@
+<button onclick="game(1)">Start One Way Dungeon</button>
+<div id="health"></div>
+<script>
+var str = Math.floor(Math.random()*3)+3;
+health.innerHTML = "Health: " + str;
+function game(n) {
+	
+	
+	switch(n){
+		case 1:
+			
+			rE();
+			alert("You find the Entrance to a Dungeon");
+			game(n+1);
+		break;
+		case 2:
+			var n = parseInt(prompt("You Enter a dungeon with four doors. Type 3,4,5,or 8."));
+			game(n);
+		break;
+		case 3:
+			alert("Pit sucks you down.  Game OVER!!!");
+		break;
+		case 4:
+			alert("Terrific fangs from below eats you. Game OVER!!!");
+		break;
+		case 5:
+			var n = parseInt(prompt("Type 6 or 7."));
+			if (n == 6 || n == 7){
+				game(n);
+			}else{
+				alert("you fail at typing. Game Over!!!");
+			}
+		break;
+		case 6:
+			alert("Portal to Victory!!!!");
+		break;
+		case 7:
+			alert("Room shines with golden light off a grand pile of treasure. Portal to Victory!!!!");
+		break;
+		case 8:
+			var n = parseInt(prompt("A long hallway with many doors. Type 1,2,3,4,5,6,7,8."));
+			if (n+8 == 9,16){
+				game(n+8);
+			}else{
+			alert("You fail at typing. Game Over!!!");
+			}
+		break;
+		case 9:
+			alert("9th Plane of hell takes you. Game OVER!!!");
+		break;
+		case 10:
+			alert("10th Plane of hell takes you.Game OVER!!!");
+		break;
+		case 11:
+			alert("Flame englufs you. Game OVER!!!");
+		break;
+		case 12:
+			alert("Gas cloud.  Game OVER!!!");
+		break;
+		case 13:
+			alert("Portal to Victory!!!!");
+		break;
+		case 14:
+			alert("Spikes.  Game OVER!!!");
+		break;
+		case 15:
+			alert("6th Plane of hell takes you.Game OVER!!!");
+		break;
+		case 16:
+			alert("Fire trap.  Game OVER!!!");
+		break;
+		default:
+			alert("Thats not a case!");
+		break;
+	}
+}
+function rE(){
+	var m = Math.floor(Math.random() * 3) + 1;
+	for (i = 1; i < m;i++) {
+		var rn = Math.floor(Math.random()*20)+1;
+		var x = document.createElement("IMG");
+		x.setAttribute("src", "https://chicotechacademy.com/edu/20b/monsters/"+rn+".jpg");
+		//x.setAttribute("width", "304");
+		//x.setAttribute("height", "228");
+		//x.setAttribute("alt", "The Pulpit Rock");
+		document.body.appendChild(x);
+	}
+	health.innerHTML = "Health: " + str-m;
+}
+</script>

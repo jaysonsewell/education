@@ -1,0 +1,103 @@
+<h2>Let's roll for your character's attributes.  
+Do you want to use classical or heroic rules?</h2>
+<select id="rules" onchange="makePlayer()">
+	<option value="">Choose Rules</option>
+	<option value="C">Classic</option>
+	<option value="S">Standard</option>
+	<option value="H">Heroic</option>
+</select>
+<div id="results"></div>
+<div id="cclass" onchange="congrats()" style="visibility:hidden">
+	<p>Choose a Character</p>
+	<select id="ccr">
+		<option value="">Choose Class</option>
+		<option value="Adventurer">Adventurer</option>
+		<option value="Magic User">Magic User</option>
+		<option value="Barbarian">Barbarian</option>
+		<option value="Cleric">Cleric</option>
+		<option value="Rogue">Rogue</option>
+		<option value="Fighter">Fighter</option>
+		<option value="Ranger">Ranger</option>
+		<option value="Knight">Knight</option>
+	</select>
+</div>
+
+<script>
+function makePlayer(){
+	var rule = rules.options[rules.selectedIndex].value;
+	var keepGoing = true;
+	var str = 0;
+	var dex = 0;
+	var wis = 0;
+	var con = 0;
+	var intel = 0;
+	var chr = 0;
+	
+//	if () {
+	while(keepGoing) {
+		if(rule == "C"){
+			var str = d6()+d6()+d6();
+			var dex = d6()+d6()+d6();
+			var wis = d6()+d6()+d6();
+			var con = d6()+d6()+d6();
+			var intel = d6()+d6()+d6();
+			var chr = d6()+d6()+d6();
+		}else if(rule == "H") {
+			var str = d6()+d6()+d6()+6;
+			var dex = d6()+d6()+d6()+6;
+			var wis = d6()+d6()+d6()+6;
+			var con = d6()+d6()+d6()+6;
+			var intel = d6()+d6()+d6()+6;
+			var chr = d6()+d6()+d6()+6;
+		}else if(rule == "S"){
+			var str = s6r();
+			var dex = s6r();
+			var wis = s6r();
+			var con = s6r();
+			var intel = s6r();
+			var chr = s6r();
+		}else{
+			return;
+		}
+		//results.innerHTML = 
+		var choosen = 
+		"Your Strength is "+str+
+		". Your Dexterity is "+dex+
+		". Your Wisdom is "+wis+
+		". Your Constitution is "+con+
+		". Your Intelligence is "+intel+
+		". Your Charasma is "+chr+". <br>"
+		;
+		alert(choosen);
+		keepGoing = confirm("Do you want to reroll?");
+		}
+	//}
+		results.innerHTML = choosen;
+		//h2a.sytle = "visibility: hidden";
+		rules.style = "visibility: hidden";
+		ccr.style = "visibility: visible";
+}
+	//document.getElementById(cclass).style.display = 'show';
+	
+
+function congrats(){
+	results.innerHTML +=
+	"Congrats!! You are a " +ccr.options[ccr.selectedIndex].value+ " <br>"
+//		if (cclass.selectedIndex == true) {
+		//	results.innerHTML +=
+	//		"Congrats!! You are a " +ccr.options[rules.selectedIndex].value+ " and <br>";
+	//	}
+}
+
+function d6(){
+	return Math.floor(Math.random()*6)+1;
+}
+function s6r(){
+	var r1 = Math.floor(Math.random()*6)+1;
+	var r2 = Math.floor(Math.random()*6)+1;
+	var r3 = Math.floor(Math.random()*6)+1;
+	var r4 = Math.floor(Math.random()*6)+1;
+	var smallest = Math.min(r1,r2,r3,r4);
+	return r1+r2+r3+r4-smallest;
+}
+</script>

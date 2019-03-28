@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace helloworld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            System.Console.WriteLine("Welcome to Die roller!");
+            System.Console.WriteLine("how many dies do you want to roll");
+            string answer = System.Console.ReadLine();
+            int sides = Convert.ToInt32( answer );
+            Die die1 = new Die(sides);
+            die1.roll();
+            System.Console.WriteLine("You rolled a " + die1.sideUp);
+            System.Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace helloworld
+{
+    class Die
+    {
+        public int sides;
+        public int sideUp;
+
+        //constructor
+        public Die(int faces)
+        {
+            sides = faces;
+            sideUp = 1;
+        }
+        //method
+        public void roll()
+        {
+            Random ran = new Random();
+            sideUp = ran.Next();
+        }
+
+    }
+}

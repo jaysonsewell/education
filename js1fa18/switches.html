@@ -1,0 +1,65 @@
+
+<h1>
+What rules do you want to use to generate your character?
+</h1>
+<select id="rollMode" onchange="rollPlayer()">
+	<option value="none">Select one</option>
+	<option value="c">classic</option>
+	<option value="h">heroic</option>
+</select>
+<div id="confirmation">
+	<h1>What score did youget on your test? 0 through 100.</h1>
+	<input id="score" type="number" min="0" max="100">
+	<button onclick="gradeScore()">Click to grade</button>
+	
+</div>
+
+
+<script>
+function gradeScore(){
+	var userScore = score.value;
+	
+	switch(userScore){
+		case "0":
+			alert("You suck!");
+		break;
+		case "60":
+			alert("D for you!");
+		break;
+		case "70":
+			alert("C for you!");
+		break;
+		case "80":
+			alert("B for you!");
+		break;
+		case "90":
+			alert("A for you!");
+		break;
+		default:
+			alert("Thats not a case!");
+		break;
+	
+	}
+
+}
+
+function rollPlayer(){
+	var mode = rollMode.options[rollMode.selectedIndex].value;
+	
+	switch(mode){
+		case "c":
+			//code for case c
+			confirmation.innerHTML = "YOU chose Classic!";
+		break;
+		case "h":
+			confirmation.innerHTML = "YOU chose Heroic!";
+		break;
+		default:
+			confirmation.innerHTML = "Make a choice";
+		break;
+	
+	}
+
+}
+
+</script>

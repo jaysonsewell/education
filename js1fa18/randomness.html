@@ -1,0 +1,122 @@
+<button onclick="s6r()">dice roll</button>
+<button onclick="cfs()">coin flip</button>
+<button onclick="cdc()">card draw color</button>
+<button onclick="cds()">card draw suit</button>
+<div id="probabliity"></div>
+<div id="results"></div>
+<script>
+function cds(){
+	var num = prompt("how many cards do you want draw?");
+	var club = 0;
+	var spade = 0;
+	var heart = 0;
+	var diamond = 0;
+		for(var i = 0; i < num; i++) {
+		var ran = Math.floor(Math.random()*4)+1
+		switch(ran){
+			case 1:
+				results.innerHTML += "<br>Results: Spade";
+				spade++;
+			break;
+			case 2:
+				results.innerHTML += "<br>Results: Club";
+				club++
+			break;
+			case 3:
+				results.innerHTML += "<br>Results: Heart";
+				heart++;
+			break;
+			case 4:
+				results.innerHTML += "<br>Results: Diamond";
+				diamond++;
+			break;
+		}
+	}
+	probabliity.innerHTML = "You drew " +club+ " clubs, " +spade+ " spades, "+heart+ " hearts, and " +diamond+" diamonds.<br> theroical probabliity is " +num/4+ "/"+num;
+}
+function cdc(){
+	var num = prompt("how many cards do you want draw?");
+	var red = 0;
+	var black = 0;
+		for(var i = 0; i < num; i++) {
+		var ran = Math.floor(Math.random()*2)+1
+		if (ran == 1) {
+			var color = "Red";
+		} else {
+			var color = "Black";
+		} 
+		results.innerHTML += "<br>Results: " + color;
+		switch(ran){
+			case 1:
+				red++;
+			break;
+			case 2:
+				black++
+			break;
+		}
+	}
+	probabliity.innerHTML = "You drew " +red+ " red cards, and " +black+ " black cards.<br> theroical probabliity is " +num/2+ "/"+num;
+}
+function cfs(){
+	var num = prompt("how many flips?");
+	var heads = 0;
+	var tails = 0;
+		for(var i = 0; i < num; i++) {
+		var ran = Math.floor(Math.random()*2)+1
+		if (ran == 1) {
+			var flip = "H";
+		} else {
+			var flip = "T";
+		} 
+		results.innerHTML += "<br>Results: " + flip;
+		switch(ran){
+			case 1:
+				heads++;
+			break;
+			case 2:
+				tails++
+			break;
+		}
+	}
+	probabliity.innerHTML = "You fliped " +heads+ " heads, and " +tails+ " tails.<br> theroical probabliity is " +num/2+ "/"+num;
+}
+function s6r(){
+	var num = prompt("how many rolls");
+	var one = 0;
+	var two = 0;
+	var three = 0;
+	var four = 0;
+	var five = 0;
+	var six = 0;
+	
+	for(var i = 0; i < num; i++) {
+		var ran = Math.floor(Math.random()*6)+1
+		results.innerHTML += "<br>Results: " + ran;
+		switch(ran){
+			case 1:
+				one++;
+			break;
+			case 2:
+				two++
+			break;
+			case 3:
+				three++;
+			break;
+			case 4:
+				four++;
+			break;
+			case 5:
+				five++;
+			break;
+			case 6:
+				six++;
+			break;
+		}
+	}
+	probabliity.innerHTML = "You rolled " +one+ " ones, " +two+ " twos, " +three+ " three, " +four+ " fours, " +five+ " fives, and " +six+ " sixes. <br> theroical probabliity is " +num/6+ "/"+num;
+}
+
+
+
+
+</script>

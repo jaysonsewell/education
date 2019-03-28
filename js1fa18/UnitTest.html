@@ -1,0 +1,62 @@
+<h1>Roll 3D6 Unit Test</h1>
+
+<div id="h0"></div>
+<div id="h1"></div>
+<div id="h2"></div>
+<div id="h3"></div>
+<div id="h4"></div>
+<div id="h5"></div>
+<div id="h6"></div>
+<div id="h7"></div>
+<div id="h8"></div>
+<div id="h9"></div>
+<div id="h10"></div>
+<div id="h11"></div>
+<div id="h12"></div>
+<div id="h13"></div>
+<div id="h14"></div>
+<div id="h15"></div>
+<div id="h16"></div>
+<div id="h17"></div>
+<div id="h18"></div>
+<div id="h19"></div>
+<div id="h20"></div>
+
+<script>
+for(i=0;i<100;i++){
+	var roll = roll3D6();
+	switch(roll){
+		case 0: h0.innerHTML += "*"; break;
+		case 1: h1.innerHTML += "*"; break;
+		case 2: h2.innerHTML += "*"; break;
+		case 3: h3.innerHTML += "*"; break;
+		case 4: h4.innerHTML += "*"; break;
+		case 5: h5.innerHTML += "*"; break;
+		case 6: h6.innerHTML += "*"; break;
+		case 7: h7.innerHTML += "*"; break;
+		case 8: h8.innerHTML += "*"; break;
+		case 9: h9.innerHTML += "*"; break;
+		case 10: h10.innerHTML += "*"; break;
+		case 11: h11.innerHTML += "*"; break;
+		case 12: h12.innerHTML += "*"; break;
+		case 13: h13.innerHTML += "*"; break;
+		case 14: h14.innerHTML += "*"; break;
+		case 15: h15.innerHTML += "*"; break;
+		case 16: h16.innerHTML += "*"; break;
+		case 17: h17.innerHTML += "*"; break;
+		case 18: h18.innerHTML += "*"; break;
+		case 19: h19.innerHTML += "*"; break;
+		case 20: h20.innerHTML += "*"; break;
+		default: alert("Fail" + roll); break; 
+		
+	}
+}
+function roll3D6(){
+	var total = 0;
+	total += Math.floor(Math.random()*6)+1;
+	total += Math.floor(Math.random()*6)+1;
+	total += Math.floor(Math.random()*6)+1;
+	return total;
+	//return 0;
+}
+</script>

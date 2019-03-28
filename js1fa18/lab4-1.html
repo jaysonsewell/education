@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Zurb</title>
+    <link href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css" rel="stylesheet">
+  <meta class="foundation-mq"></head>
+  <body>
+    
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+
+        <div class="off-canvas position-left reveal-for-large" id="my-info" aria-hidden="true" data-position="left" data-off-canvas="" data-offcanvas="wzczl4-offcanvas">
+          <div class="row column">
+            <br>
+            <img class="thumbnail" src="zurb.jpg">
+            <h5>Enter The World Of Zurb</h5>
+            <p>Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo.</p>
+          </div>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content="">
+          <div class="title-bar hide-for-large">
+            <div class="title-bar-left">
+              <button class="menu-icon" aria-expanded="false" aria-controls="my-info" type="button" data-open="my-info"></button>
+              <span class="title-bar-title" id="charname" contenteditable="">Character Name Here</span>
+            </div>
+          </div>
+          <div class="callout primary">
+            <div class="row column">
+              <h1>Click on the image below to choose your character</h1>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla.</p>
+            </div>
+          </div>
+          <div class="row small-up-2 medium-up-3 large-up-4">
+            <div class="column" onclick="game('Barbarian')">
+              <img class="thumbnail" src="bar.jpg">
+              <h5>Barbarian</h5>
+            </div>
+            <div class="column" onclick="game('Bard')">
+              <img class="thumbnail" src="bard.jpg">
+              <h5>Bard</h5>
+            </div>
+            <div class="column" onclick="game('Druid')">
+              <img class="thumbnail" src="druid.jpg">
+              <h5>Druid</h5>
+            </div>
+            <div class="column" onclick="game('Monk')">
+              <img class="thumbnail" src="monk.jpg">
+              <h5>Monk</h5>
+            </div>
+            <div class="column" onclick="game('Paladin')">
+              <img class="thumbnail" src="pal.jpg">
+              <h5>Paladin</h5>
+            </div>
+            <div class="column" onclick="game('Ranger')">
+              <img class="thumbnail" src="rang.jpg">
+              <h5>Ranger</h5>
+            </div>
+            <div class="column" onclick="game('Sorcerer')">
+              <img class="thumbnail" src="sorc.jpg">
+              <h5>Sorcerer</h5>
+            </div>
+            <div class="column" onclick="game('Warlock')">
+              <img class="thumbnail" src="war.jpg">
+              <h5>Warlock</h5>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="medium-6 columns">
+              <h3>About Me</h3>
+              <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.</p>
+        
+            </div>
+            <div class="medium-6 columns">
+              <label>Name
+                <input id="cname" type="text">
+              </label>
+			  <label>Strength
+                <input id="str" type="text">
+              </label>
+			  <label>Dexterity
+                <input id="dex" type="text">
+              </label>
+			  <label>Intelligence
+                <input id="inte" type="text">
+              </label>
+			  <label>Constituion
+                <input id="cons" type="text">
+              </label>
+			  <label>Wisdom
+                <input id="wis" type="text">
+              </label>
+			  <label>Charisma
+                <input id="cha" type="text">
+              </label>
+              <label>Hit Points
+                <input id="hp" type="text">
+              </label>
+			  <label>Gold Pieces
+                <input id="gp" type="text">
+              </label>
+              <input class="button expanded" type="submit" value="Confirm" onclick="alert('Game Loading')">
+            </div>
+          </div>
+        <div class="js-off-canvas-exit"></div></div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+	function game(charName){
+		var keepGoing = true;
+		while(keepGoing) {
+			var str = rNH();
+			var dex = rNH();
+			var wis = rNH();
+			var con = rNH();
+			var intel = rNH();
+			var chr = rNH();
+			var hp = rNH();
+			var gc = rNH();
+			
+		//results.innerHTML = 
+		var choosen = 
+		"Your Name is "+charName+
+		". \nYour Strength is "+str+
+		". \nYour Dexterity is "+dex+
+		". \nYour Wisdom is "+wis+
+		". \nYour Constitution is "+con+
+		". \nYour Intelligence is "+intel+
+		". \nYour Charasma is "+chr+
+		". \nYour hit points are "+hp+
+		". \nYour gold coins are "+gc
+		;
+		alert(choosen);
+		keepGoing = confirm("Do you want to reroll?");
+		}
+		//add choosen to text boxes
+		document.getElementById("cname").value= charName;
+		document.getElementById("str").value= str;
+		document.getElementById("dex").value= dex;
+		document.getElementById("wis").value= wis;
+		document.getElementById("cons").value= con;
+		document.getElementById("inte").value= intel;
+		document.getElementById("cha").value= chr;
+		document.getElementById("hp").value= hp;
+		document.getElementById("gp").value= gc;
+		
+	}
+	function rNH() {
+		var randNum = Math.floor(Math.random() * 6) + 1;
+		var randNum2 = Math.floor(Math.random() * 6) + 1;
+		var randNum3 = Math.floor(Math.random() * 6) + 1;
+		return randNum+randNum2+randNum3+6;
+	}
+    </script>
+	
+
+
+
+    </body></html>

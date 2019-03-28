@@ -1,0 +1,31 @@
+<h1>Roll the Dice!</h1>
+<h1 id="roll_total"></h1>
+<script>
+var rollTimes = prompt("How many times you wanna roll?");
+var times = parseInt(rollTimes);
+var total = 0;
+var i = 1;
+while (i < times) {
+	var r = d6();
+	total += r;
+	document.write( "Roll " +i+" results: " +r+"<br>");
+	i++;
+}
+roll_total.innerHTML = "You rolled a total of " + total;
+function d6(){
+	return Math.floor(Math.random()*6) + 1;
+}
+
+/*
+var keepRolling = true;
+while(keepRolling){
+	var roll = prompt("how many rolls?");
+	for (i = 1;i < roll; i++){
+		var r = "roll " +i+ " : "+ d6()+"<br>";
+		document.write(r);
+	}
+	keepRolling = confirm("keep rolling?");
+	
+}
+*/
+</script>

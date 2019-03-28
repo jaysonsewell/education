@@ -1,0 +1,36 @@
+
+
+<h2>Let's roll for your character's attributes.  Do you want to use classical or heroic rules?</h2>
+<select name="class" size="2">
+  <option selected=""> Please Select </option>
+  <option id="classical">classical</option>
+  <option id="heroic">heroic</option>
+</select>
+<br>
+<button onclick="game()"> Start Game </button>
+<script>
+//jayson sewell
+
+function game() {
+	if ( document.getElementById("classical").selected == true) {
+		alert("Your Strength is " + rNC() + ". Your Dexterity is " + rNC() + ". Your Wisdom is " + rNC() + ". Your Constitution is " + rNC() + ". Your Intelligence is " + rNC() + ". Your Charasma is " + rNC());
+	} else if (document.getElementById("heroic").selected == true) {
+		alert("Your Strength is " + rNH() + ". Your Dexterity is " + rNH() + ". Your Wisdom is " + rNH() + ". Your Constitution is " + rNH() + ". Your Intelligence is " + rNH() + ". Your Charasma is " + rNH());
+	} else {
+		alert("Please select from the dropdown");
+	}
+}
+function rNC() {
+	var randNum = Math.floor(Math.random() * 6) + 1;
+	var randNum2 = Math.floor(Math.random() * 6) + 1;
+	var randNum3 = Math.floor(Math.random() * 6) + 1;
+	return randNum+randNum2+randNum3;
+}
+function rNH() {
+	var randNum = Math.floor(Math.random() * 6) + 1;
+	var randNum2 = Math.floor(Math.random() * 6) + 1;
+	var randNum3 = Math.floor(Math.random() * 6) + 1;
+	var randNum4 = Math.floor(Math.random() * 6) + 1;
+	return randNum+randNum2+randNum3+randNum4;
+}
+</script>
