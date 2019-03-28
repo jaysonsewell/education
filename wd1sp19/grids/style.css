@@ -1,0 +1,19 @@
+/* Write Grid CSS Styles Here */
+<<<<<<< HEAD
+.albums{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 325px);
+  grid-gap: 50px;
+}
+/*
+.album {
+
+}
+
+*/
+.album{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+=======
+>>>>>>> 8d11c44dbc5ecbfb47ae89a333bd2a77e6f1224f

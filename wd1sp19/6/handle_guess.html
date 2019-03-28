@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+- Filename:		handle_guess.html
+- Description:	Handling the User's Guess
+- Author:		Luke Sathrum / YOUR NAME
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Number Guessing Game!</title>
+		<style>
+			/* YOUR STYLE(S) HERE */
+	    </style>
+		<script type="text/javascript">
+		  // DO NOT ALTER
+		  if (window.location.search != "") {
+		    var get_string = window.location.search.substr(1).split("&");
+		    var get = {};
+		    for (var i = 0; i < get_string.length; i++) {
+		      var temp = get_string[i].split("=");
+              if (typeof get[decodeURIComponent(temp[0])] == "undefined")
+			    get[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+              else
+                get[decodeURIComponent(temp[0])] = get[decodeURIComponent(temp[0])] + ", " + decodeURIComponent(temp[1]);
+		    }
+		  }
+		</script>
+	</head>
+	<body>
+		<script src="number_guessing_game.js"></script>
+	</body>
+</html>

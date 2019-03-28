@@ -1,0 +1,24 @@
+1. Web Site Name
+
+ANSWER HERE
+
+2. Web Site Description
+
+ANSWER HERE
+
+3. Site Pages
+
+- PAGE #1 NAME
+-- DESCRIPTION
+
+- PAGE #2 NAME
+-- DESCRIPTION
+
+- PAGE #3 NAME
+-- DESCRIPTION
+
+- PAGE #4 NAME
+-- DESCRIPTION
+
+- PAGE #5 NAME
+-- DESCRIPTION
